@@ -1,0 +1,17 @@
+try:
+    today = int(input("输入今天的日期 (0-6)："))
+    if today < 0 or today > 6:
+        print("日期为星期，必须在阿拉伯数字0到6之间")
+        exit()
+except ValueError:
+    print("日期为星期，必须在阿拉伯数字0到6之间")
+    exit()
+
+try:
+    future = int(input("输入间隔的天数："))
+except ValueError:
+    print("间隔应为整数")
+    exit()
+
+days = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"]
+print(f"未来那天是：{days[(today + future) % 7]}")
